@@ -2,7 +2,7 @@ import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
 
 const frameMetadata = getFrameMetadata({
-  buttons: ['#37', 'Next Mochimon'],
+  buttons: ['Next Mochimon'],
   image: 'https://raw.seadn.io/files/f3cb5c80c96cea79441a15f06ee291c5.png',
   post_url: 'https://farcaster-frame-myk.vercel.app/api/frame',
 });
