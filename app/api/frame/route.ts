@@ -16,6 +16,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   return new NextResponse(`<!DOCTYPE html><html><head>
     <meta property="fc:frame" content="vNext" />
     <meta property="fc:frame:image" content="https://ipfs.io/ipfs/Qmae61Y9tLf5w9vgdjJAjXdXhkqcJViCHUD8SDgviPfTyv/${random}.png" />
+    <meta property="fc:frame:button:1" content="#${random}" />
+    <meta property="fc:frame:get_url" content="https://opensea.io/assets/base/0x949bed087ff0241e04e98d807de3c3dd97eaa381/${random - 1}" />
     <meta property="fc:frame:button:1" content="Next Mochimon" />
     <meta property="fc:frame:post_url" content="https://farcaster-frame-myk.vercel.app/api/frame" />
   </head></html>`);
@@ -23,11 +25,6 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
 export async function POST(req: NextRequest): Promise<Response> {
   return getResponse(req);
-}
-
-export async function GET(req: NextRequest): Promise<Response> {
-  const random = Math.floor(Math.random() * 3333) + 1;
-  return new NextResponse(`https://ipfs.io/ipfs/Qmae61Y9tLf5w9vgdjJAjXdXhkqcJViCHUD8SDgviPfTyv/${random}.png`);
 }
 
 export const dynamic = 'force-dynamic';
